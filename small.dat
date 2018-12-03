@@ -1,0 +1,1000 @@
+ID   A00673; SV 1; linear; unassigned DNA; PAT; SYN; 45 BP.
+XX
+AC   A00673;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Artificial sequence for plasmid pSV-V-NP gamma-SNase
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; patent; regular; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-45
+RA   Neuberger M.S.;
+RT   "PRODUCTION OF CHIMERIC ANTIBODIES";
+RL   Patent number WO8601533-A/2, 13-MAR-1986.
+RL   CellTech Ltd..
+XX
+DR   ENA; A00673.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..45
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   exon            8..>45
+FT   intron          <1..7
+XX
+SQ   Sequence 45 BP; 14 A; 13 C; 7 G; 11 T; 0 other;
+     tcatcagctc ctaacctcga ggatccaaca gtatatagtg caact                        45
+//
+ID   A01650; SV 1; linear; unassigned DNA; PAT; SYN; 45 BP.
+XX
+AC   A01650;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Synthetic IG-D-segment fragment
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; diversity; patent; regular; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-45
+RA   ;
+RT   "PRODUCTION OF ANTIBODIES FROM TRANSGENIC ANIMALS";
+RL   Patent number WO9004036-A/1, 19-APR-1990.
+XX
+DR   ENA; A01650.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..45
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   misc_feature    1..45
+FT                   /note="D-seqment"
+XX
+SQ   Sequence 45 BP; 10 A; 12 C; 12 G; 11 T; 0 other;
+     gcgtcaccgt ggtagctgct accgtagtaa taaacactgt ggtcc                        45
+//
+ID   A01651; SV 1; linear; unassigned DNA; PAT; SYN; 39 BP.
+XX
+AC   A01651;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Synthetic IG-D-segment fragment
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; diversity; patent; regular; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-39
+RA   ;
+RT   "PRODUCTION OF ANTIBODIES FROM TRANSGENIC ANIMALS";
+RL   Patent number WO9004036-A/2, 19-APR-1990.
+XX
+DR   ENA; A01651.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..39
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   misc_feature    1..39
+FT                   /note="D-segment"
+XX
+SQ   Sequence 39 BP; 8 A; 10 C; 12 G; 9 T; 0 other;
+     gcgtcaccgt ggtcgtaacc atagtagaca ctgtggtgc                               39
+//
+ID   A02055; SV 1; linear; unassigned DNA; PAT; SYN; 45 BP.
+XX
+AC   A02055;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Artificial sequence for plasmid PSV-V-NP gamma-Klenow
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; diversity; patent; regular; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-45
+RA   Neuberger M.S.;
+RT   "PRODUCTION OF CHIMERIC ANTIBODIES";
+RL   Patent number WO8601533-A/6, 13-MAR-1986.
+RL   CellTech Ltd..
+XX
+DR   ENA; A02055.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..45
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   intron          <1..7
+FT   exon            8..>45
+XX
+SQ   Sequence 45 BP; 9 A; 14 C; 11 G; 11 T; 0 other;
+     tcatcagctc ctaacctcga cggatccggg gcaacggtga tttct                        45
+//
+ID   A02359; SV 1; linear; unassigned DNA; PAT; MUS; 1931 BP.
+XX
+AC   A02359;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   M.musculus IgG gamma 2b gene.
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; constant; patent; regular; unassigned DNA; undefined.
+XX
+OS   Mus musculus (house mouse)
+OC   cellular organisms; Eukaryota; Opisthokonta; Metazoa; Eumetazoa; Bilateria;
+OC   Deuterostomia; Chordata; Craniata; Vertebrata; Gnathostomata; Teleostomi;
+OC   Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha; Tetrapoda; Amniota;
+OC   Mammalia; Theria; Eutheria; Boreoeutheria; Euarchontoglires; Glires;
+OC   Rodentia; Sciurognathi; Muroidea; Muridae; Murinae; Mus; Mus; Mus musculus.
+XX
+RN   [1]
+RP   1-1931
+RA   ;
+RT   "ALTERED ANTIBODIES";
+RL   Patent number WO8807089-A/1, 22-SEP-1988.
+XX
+DR   ENA; A02359.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..1931
+FT                   /organism="Mus musculus"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:10090"
+FT   misc_feature    173..463
+FT                   /gene="IgG gamma 2b"
+FT                   /note="CH1 domain"
+FT   misc_feature    780..843
+FT                   /gene="IgG gamma 2b"
+FT                   /note="hinge"
+FT   misc_feature    953..1282
+FT                   /gene="IgG gamma 2b"
+FT                   /note="CH2 domain"
+FT   misc_feature    1395..1715
+FT                   /gene="IgG gamma 2b"
+FT                   /note="CH3 domain"
+XX
+SQ   Sequence 1931 BP; 537 A; 530 C; 445 G; 419 T; 0 other;
+     aacatggaaa aattaaggtc acagtgcaag ctctggaggc ggaaatttct gacactgctt        60
+     gcctcagatc aattgtagaa gacacggttc taagagcaaa gctaagaaca gaatctctcc       120
+     aaatatccga ggccactgat aagaaaaagc tcacacattc tcctctcttg cagccaaaac       180
+     aacaccccca tcagtctatc cactggcccc tgggtgtgga gatacaactg gttcctccgt       240
+     gactctggga tgcctggtca agggctactt ccctgagtca gtgactgtga cttggaactc       300
+     tggatccctg tccagcagtg tgcacacctt cccagctctc ctgcagtctg gactctacac       360
+     tatgagcagc tcagtgactg tcccctccag cacttggcca agtcagaccg tcacctgcag       420
+     cgttgctcac ccagccagca gcaccacggt ggacaaaaaa cttggtgaga ggacattcag       480
+     gggaggaggg attcaccaga gttgaggcaa aggtattagc ctatctaaac cagccaggct       540
+     gggatccatc accaaggagg tgaccttagc ccagggaaga gggagatact gtctctgcct       600
+     ccctcctggg aacatctagc tatgaccacc tacactcaag gacatgttcc tctgggatag       660
+     gtgtgcttgt catttccagg atcatcctgg aactaagccc ataccaggac aaactttcct       720
+     ctctctggtt tggtgcttct ctccttcaaa aaccagtaac atccagcctt ctctctgcag       780
+     agcccagcgg gcccatttca acaatcaacc cctgtcctcc atgcaaggag tgtcacaaat       840
+     gcccaggtaa gtcactacca gagctccact cccaggagaa tggtaagtgc tgtaaaaatc       900
+     cctgtaatgg aggataagcc atgtacaaat ccatttccat ctctcctcat cagctcctaa       960
+     cctcgagggt ggaccatccg tcttcatctt ccctccaaat atcaaggatg tactcatgat      1020
+     ctccctgaca cccaaggtca cgtgtgtggt ggtggatgtg agcgaggatg acccagacgt      1080
+     ccagatcagc tggtttgtga acaacgtgga agtacacaca gctcagacac aaacccatag      1140
+     agaggattac aacagtacta tccgggtggt cagcaccctc cccatccagc accaggactg      1200
+     gatgagtggc aaggagttca aatgcaaggt caacaacaaa gacctcccat cacccatcga      1260
+     gagaaccatc tcaaaaatta aaggtgggac ctgcaggaca actgcatggg ggctgggatg      1320
+     ggcataagaa taaatgtcta tgtggacagc cttccacttc agccatgacc tctatgtatg      1380
+     tttctaaccc cacagggcta gtcagagctc cacaagtata catcttgccg ccaccagcag      1440
+     agcagttgtc caggaaagat gtcagtctca cttgcctggt cgtgggcttc aaccctggag      1500
+     acatcagtgt ggagtggacc agcaatgggc atacagagga gaactacaag gacaccgcac      1560
+     cagtcctaga ctctgacggt tcttacttca tatatagcaa gctcaatatg aaaacaagca      1620
+     agtgggagaa aacagattcc ttctcatgca acgtgagaca cgagggtctg aaaaattact      1680
+     acctgaagaa gaccatctcc cggtctccgg gtaaatgagc tcagcaccca caaagctctc      1740
+     aggtcctaag agacactggc acccatatcc atgcatccct tgtataaata aagcatccag      1800
+     caaagcctgg taccatgtaa aactgtcctg gttctttcca aggtatagag catagctcac      1860
+     gggctgatag gtctggccag ggccggagaa cagccttgtc tataggaaga gaatgaggtt      1920
+     tctgcctgca t                                                           1931
+//
+ID   A02365; SV 1; linear; unassigned DNA; PAT; HUM; 240 BP.
+XX
+AC   A02365;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   H.sapiens gamma 3 gene.
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; constant; patent; regular; unassigned DNA; undefined.
+XX
+OS   Homo sapiens (human)
+OC   cellular organisms; Eukaryota; Opisthokonta; Metazoa; Eumetazoa; Bilateria;
+OC   Deuterostomia; Chordata; Craniata; Vertebrata; Gnathostomata; Teleostomi;
+OC   Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha; Tetrapoda; Amniota;
+OC   Mammalia; Theria; Eutheria; Boreoeutheria; Euarchontoglires; Primates;
+OC   Haplorrhini; Simiiformes; Catarrhini; Hominoidea; Hominidae; Homininae;
+OC   Homo; Homo sapiens.
+XX
+RN   [1]
+RP   1-240
+RA   ;
+RT   "ALTERED ANTIBODIES";
+RL   Patent number WO8807089-A/7, 22-SEP-1988.
+XX
+DR   ENA; A02365.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..240
+FT                   /organism="Homo sapiens"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:9606"
+XX
+SQ   Sequence 240 BP; 47 A; 76 C; 67 G; 50 T; 0 other;
+     gccctagagt ggcctgcatc cagggacagg tcccagtcgg gtgctgacac atctgcctcc        60
+     atctcttcct cagcacctga actcctggga ggaccgtcag tcttcctctt ccccccaaaa       120
+     cccaaggata cccttatgat ttcccggacc cctgaggtca cgtgcgtggt ggtggacgtg       180
+     agccacgaag accccgaggt ccagttcaag tggtacgtgg acggcgtgga ggtgcataat       240
+//
+ID   A02367; SV 1; linear; unassigned DNA; STD; SYN; 401 BP.
+XX
+AC   A02367;
+XX
+DT   31-OCT-2001 (Rel. 200144-3, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 5)
+XX
+DE   Synthetic CH2 domain of mouse IgG2b antibody gene.
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; IG-Heavy-Gamma; IG-Heavy-Gamma-2-b-IGHG2B;
+KW   IG-Heavy-Gamma-2-IGHG2; regular; unassigned DNA; undefined;
+KW   synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-401
+RA   ;
+RT   "ALTERED ANTIBODIES";
+RL   Patent number WO8807089-A/9, 22-SEP-1988.
+XX
+DR   ENA; A02367.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..401
+FT                   /db_xref="taxon:32630"
+FT                   /mol_type="unassigned DNA"
+FT                   /organism="synthetic construct"
+FT   CDS             <54..>383
+FT                   /note="with mutations"
+FT                   /transl_table=11
+FT                   /product="CH2 IgG2b antibody"
+FT                   /protein_id="CAA00242.1"
+FT                   /translation="APNLEGGPSVFIFPPNIKDVLMISLTPKVTCVVVDVSEDDPDVQI
+FT                   SWFVNNVEVHTAQTQTHREDYNSTIRVVSTLPIQHQDWMSGKEFKCKVNNKDLPSPIER
+FT                   TISKIK"
+XX
+SQ   Sequence 401 BP; 118 A; 112 C; 90 G; 81 T; 0 other;
+     ccctgtaatg gaggataagc catgtacaaa tccatttcca tctctcctca tcagctccta        60
+     acctcgaggg tggaccatcc gtcttcatct tccctccaaa tatcaaggat gtactcatga       120
+     tctccctgac acccaaggtc acgtgtgtgg tggtggatgt gagcgaggat gacccagacg       180
+     tccagatcag ctggtttgtg aacaacgtgg aagtacacac agctcagaca caaacccata       240
+     gagaggatta caacagtact atccgggtgg tcagcaccct ccccatccag caccaggact       300
+     ggatgagtgg caaggagttc aaatgcaagg tcaacaacaa agacctccca tcacccatcg       360
+     agagaaccat ctcaaaaatt aaaggtggga cctgcaggac a                           401
+//
+ID   A02856; SV 1; linear; unassigned DNA; PAT; SYN; 894 BP.
+XX
+AC   A02856;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   06-OCT-2012 (Rel. 201240-6, Last updated, Version 3)
+XX
+DE   Artificial sequence for ZZ-IGF-I
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   scFv; patent; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-894
+RA   Loewenadler B., Holmgren E., Uhlen M., Nilsson B.;
+RT   "Preparation of fused proteins, antibodies and processes therefore.";
+RL   Patent number EP0243333-A/4, 28-OCT-1987.
+RL   KabiGen AB.
+XX
+DR   ENA; A02856.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..894
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   CDS             184..888
+FT                   /transl_table=11
+FT                   /product="ZZ-IGF-1"
+FT                   /protein_id="CAA00282.1"
+FT                   /translation="MKKKNIYSIRKLGVGIASVTLGTLLISGXVTPAANAAQHDEAVDN
+FT                   KFNKEQQNAFYEILHLPNLNEEQRNAFIQSLKDDPSQSANLLAEAKKLNDAQAPKVDNK
+FT                   FNKEQQNAFYEILHLPNLNEEQRNAFIQSLKDDPSQSANLLAEAKKLNDAQAPKVDANS
+FT                   NGPETLCGAELVDPLQFVCGDRGFYFNKPTAYGSSSRRAPQTGIVDECCFRSCDLRRLE
+FT                   MYCAPLKPAKSA"
+XX
+SQ   Sequence 894 BP; 295 A; 185 C; 157 G; 256 T; 1 other;
+     tcgaaatagc gtgattttgc ggttttaagc cttttacttc ctgaataaat ctttcagcaa        60
+     aatatttatt ttataagttg taaaacttac ctttaaattt aattataaat atagatttta       120
+     gtattgcaat acataattcg ttatattatg atgactttac aaatacatac agggggtatt       180
+     aatttgaaaa agaaaaacat ttattcaatt cgtaaactag gtgtaggtat tgcatctgta       240
+     actttaggta cattacttat atctggtgnc gtaacacctg ctgcaaatgc tgcgcaacac       300
+     gatgaagccg tagacaacaa attcaacaaa gaacaacaaa acgcgttcta tgagatctta       360
+     catttaccta acttaaacga agaacaacga aacgccttca tccaaagttt aaaagatgac       420
+     ccaagccaaa gcgctaacct tttagcagaa gctaaaaagc taaatgatgc tcaggcgccg       480
+     aaagtagaca acaaattcaa caaagaacaa caaaacgcgt tctatgagat cttacattta       540
+     cctaacttaa acgaagaaca acgaaacgcc ttcatccaaa gtttaaaaga tgacccaagc       600
+     caaagcgcta accttttagc agaagctaaa aagctaaatg atgctcaggc gccgaaagta       660
+     gacgcgaatt ctaacggtcc cgaaactctg tgcggtgctg aactggttga ccctctgcag       720
+     tttgtttgcg gtgaccgtgg tttttatttt aacaaaccca ctgcttatgg ttcttcttct       780
+     cgtcgtgctc cccagactgg tattgttgac gaatgctgct ttcgttcttg cgacctgcgt       840
+     cgtctggaaa tgtattgcgc tcccctgaaa cccgctaaat ctgcttagaa gctt             894
+//
+ID   A03900; SV 1; linear; unassigned DNA; PAT; HUM; 611 BP.
+XX
+AC   A03900;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   H.sapiens HuV(NP) gene
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; diversity; joining; patent; regular; unassigned DNA; rearranged.
+XX
+OS   Homo sapiens (human)
+OC   cellular organisms; Eukaryota; Opisthokonta; Metazoa; Eumetazoa; Bilateria;
+OC   Deuterostomia; Chordata; Craniata; Vertebrata; Gnathostomata; Teleostomi;
+OC   Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha; Tetrapoda; Amniota;
+OC   Mammalia; Theria; Eutheria; Boreoeutheria; Euarchontoglires; Primates;
+OC   Haplorrhini; Simiiformes; Catarrhini; Hominoidea; Hominidae; Homininae;
+OC   Homo; Homo sapiens.
+XX
+RN   [1]
+RP   1-611
+RA   ;
+RT   "Recombinant antibodies and methods for their production.";
+RL   Patent number EP0239400-A/3, 30-SEP-1987.
+RL   MEDICAL RESEARCH COUNCIL.
+XX
+DR   ENA; A03900.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..611
+FT                   /organism="Homo sapiens"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:9606"
+FT   CDS             join(110..155,238..609)
+FT                   /partial
+FT                   /gene="HuV(NP)"
+FT                   /protein_id="CAA00307.1"
+FT                   /translation="MGWSCIILFLVATATGVHSQVQLQESGPGLVRPSQTLSLTCTVSG
+FT                   STFSSYWMHWVRQPPGRGLEWIGRIDPNSGGTKYNEKFKSRVTMLVDTSKNQFSLRLSS
+FT                   VTAADTAVYYCARYDYYGSSYFDYWGQGSLVTVSS"
+FT   mat_peptide     join(155,238..609)
+FT                   /partial
+FT                   /gene="HuV(NP)"
+FT   intron          156..237
+FT                   /number=1
+FT   exon            110..155
+FT                   /number=1
+FT   exon            238..609
+FT                   /number=2
+FT   sig_peptide     110..154
+XX
+SQ   Sequence 611 BP; 163 A; 152 C; 155 G; 141 T; 0 other;
+     atgcaaatcc tctgaatcta catggtaaat ataggtttgt ctataccaca aacagaaaaa        60
+     catgagatca cagttctctc tacagttact gagcacacag gacctcacca tgggatggag       120
+     ctgtatcatc ctcttcttgg tagcaacagc tacaggtaag gggctcacag tagcaggctt       180
+     gaggtctgga catatatatg ggtgacaatg acatccactt tgcctttctc tccacaggtg       240
+     tccactccca ggtccaactg caggagagcg gtccaggtct tgtgagacct agccagaccc       300
+     tgagcctgac ctgcaccgtg tctggcagca ccttcagcag ctactggatg cactgggtga       360
+     gacagccacc tggacgaggt cttgagtgga ttggaaggat tgatcctaat agtggtggta       420
+     ctaagtacaa tgagaagttc aagagcagag tgacaatgct ggtagacacc agcaagaacc       480
+     agttcagcct gagactcagc agcgtgacag ccgccgacac cgcggtctat tattgtgcaa       540
+     gatacgatta ctacggtagt agctactttg actactgggg tcaaggcagc ctcgtcacag       600
+     tctcctcagg t                                                            611
+//
+ID   A03903; SV 1; linear; unassigned DNA; PAT; UNC; 39 BP.
+XX
+AC   A03903;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Oligonucleotide D1.3 CDR1
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; patent; regular; unassigned DNA.
+XX
+OS   unidentified
+OC   unclassified sequences; unidentified.
+XX
+RN   [1]
+RP   1-39
+RA   ;
+RT   "Recombinant antibodies and methods for their production.";
+RL   Patent number EP0239400-A/6, 30-SEP-1987.
+RL   MEDICAL RESEARCH COUNCIL.
+XX
+DR   ENA; A03903.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..39
+FT                   /organism="unidentified"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32644"
+XX
+SQ   Sequence 39 BP; 8 A; 13 C; 8 G; 10 T; 0 other;
+     ctgtctcacc cagtttacac catagccgct gaaggtgct                               39
+//
+ID   A03904; SV 1; linear; unassigned DNA; PAT; UNC; 72 BP.
+XX
+AC   A03904;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Oligonucleotide D1.3 CDR2
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; patent; regular; unassigned DNA.
+XX
+OS   unidentified
+OC   unclassified sequences; unidentified.
+XX
+RN   [1]
+RP   1-72
+RA   ;
+RT   "Recombinant antibodies and methods for their production.";
+RL   Patent number EP0239400-A/7, 30-SEP-1987.
+RL   MEDICAL RESEARCH COUNCIL.
+XX
+DR   ENA; A03904.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..72
+FT                   /organism="unidentified"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32644"
+XX
+SQ   Sequence 72 BP; 18 A; 20 C; 10 G; 24 T; 0 other;
+     cattgtcact ctggatttga gagctgaatt atagtctgtg tttccatcac cccaaatcat        60
+     tccaatccac tc                                                            72
+//
+ID   A03905; SV 1; linear; unassigned DNA; PAT; UNC; 48 BP.
+XX
+AC   A03905;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Oligonucleotide D1.3 CDR3
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; patent; regular; unassigned DNA.
+XX
+OS   unidentified
+OC   unclassified sequences; unidentified.
+XX
+RN   [1]
+RP   1-48
+RA   ;
+RT   "Recombinant antibodies and methods for their production.";
+RL   Patent number EP0239400-A/8, 30-SEP-1987.
+RL   MEDICAL RESEARCH COUNCIL.
+XX
+DR   ENA; A03905.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..48
+FT                   /organism="unidentified"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32644"
+XX
+SQ   Sequence 48 BP; 12 A; 16 C; 6 G; 14 T; 0 other;
+     gccttgaccc cagtagtcaa gcctataatc tctctctctt gcacaata                     48
+//
+ID   A03907; SV 1; linear; unassigned DNA; PAT; HUM; 412 BP.
+XX
+AC   A03907;
+XX
+DT   11-MAR-1998 (Rel. 199811-3, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 5)
+XX
+DE   H.sapiens antibody D1.3 variable region protein
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; variable; diversity; joining; patent; regular; unassigned DNA;
+KW   rearranged.
+XX
+OS   Homo sapiens (human)
+OC   cellular organisms; Eukaryota; Opisthokonta; Metazoa; Eumetazoa; Bilateria;
+OC   Deuterostomia; Chordata; Craniata; Vertebrata; Gnathostomata; Teleostomi;
+OC   Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha; Tetrapoda; Amniota;
+OC   Mammalia; Theria; Eutheria; Boreoeutheria; Euarchontoglires; Primates;
+OC   Haplorrhini; Simiiformes; Catarrhini; Hominoidea; Hominidae; Homininae;
+OC   Homo; Homo sapiens.
+XX
+RN   [1]
+RP   1-412
+RA   ;
+RT   "Recombinant antibodies and methods for their production.";
+RL   Patent number EP0239400-A/10, 30-SEP-1987.
+RL   MEDICAL RESEARCH COUNCIL.
+XX
+DR   ENA; A03907.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..412
+FT                   /organism="Homo sapiens"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:9606"
+FT   V_region        8..>412
+FT                   /note="antibody D1.3 V region"
+FT   sig_peptide     8..64
+FT   CDS             8..>412
+FT                   /product="antibody D1.3 V region (VDJ)"
+FT                   /protein_id="CAA00308.1"
+FT                   /translation="MAVLALLFCLVTFPSCILSQVQLKESGPGLVAPSQSLSITCTVSG
+FT                   FSLTGYGVNWVRQPPGKGLEWLGMIWGDGNTDYNSALKSRLSISKDNSKSQVFLKMNSL
+FT                   HTDDTARYYCARERDYRLDYWGQGTTLTVSS"
+FT   D_segment       356..371
+FT   J_segment       372..>412
+FT                   /note="J(H)2 region"
+XX
+SQ   Sequence 412 BP; 105 A; 109 C; 104 G; 94 T; 0 other;
+     tcagagcatg gctgtcctgg cattactctt ctgcctggta acattcccaa gctgtatcct        60
+     ttcccaggtg cagctgaagg agtcaggacc tggcctggtg gcgccctcac agagcctgtc       120
+     catcacatgc accgtctcag ggttctcatt aaccggctat ggtgtaaact gggttcgcca       180
+     gcctccagga aagggtctgg agtggctggg aatgatttgg ggtgatggaa acacagacta       240
+     taattcagct ctcaaatcca gactgagcat cagcaaggac aactccaaga gccaagtttt       300
+     cttaaaaatg aacagtctgc acactgatga cacagccagg tactactgtg ccagagagag       360
+     agattatagg cttgactact ggggccaagg caccactctc acagtctcct ca               412
+//
+ID   A04195; SV 1; linear; cDNA; STD; SYN; 51 BP.
+XX
+AC   A04195;
+XX
+DT   15-MAY-1995 (Rel. 199520-1, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 5)
+XX
+DE   Artificial Ig lambda-chain mRNA
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Light; IG-Light-Lambda-IGL; regular; cDNA; rearranged;
+KW   synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-51
+RA   ;
+RT   ;
+RL   Patent number WO8403712-A/4, 27-SEP-1984.
+XX
+DR   ENA; A04195.
+XX
+CC   IMGT/LIGM-DB annotation level: by annotators
+XX
+FH   Key                 Location/Qualifiers
+FH   
+FT   L-REGION            10..51
+FT                       /partial
+FT                       /translation="MQAVMTQESALTTS"
+FT                       /organism="Artificial sequence"
+FT                       /product="Ig Lambda"
+FT   INIT-CODON          10..12
+XX
+SQ   Sequence 51 BP; 15 A; 13 C; 10 G; 13 T; 0 other;
+     gattgatcaa tgcaggctgt tatgactcag gaatctgcac tcaccacatc a                 51
+//
+ID   A04228; SV 1; linear; cDNA; STD; SYN; 35 BP.
+XX
+AC   A04228;
+XX
+DT   11-MAR-1998 (Rel. 199811-3, arrived in LIGM-DB)
+DT   20-APR-1999 (Rel. 199916-2, Last updated, Version 2)
+XX
+DE   Artificial Ig mu-chain mRNA
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; IG-Heavy-Mu; cDNA; rearranged; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-35
+RA   ;
+RT   ;
+RL   Patent number WO8403712-A/40, 27-SEP-1984.
+XX
+DR   ENA; A04228.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..35
+FT                   /organism="synthetic construct"
+XX
+SQ   Sequence 35 BP; 10 A; 7 C; 11 G; 7 T; 0 other;
+     aagggtatga tcaatgcagg ttcagctgca gcagc                                   35
+//
+ID   A04229; SV 1; linear; cDNA; STD; SYN; 36 BP.
+XX
+AC   A04229;
+XX
+DT   11-MAR-1998 (Rel. 199811-3, arrived in LIGM-DB)
+DT   20-APR-1999 (Rel. 199916-2, Last updated, Version 2)
+XX
+DE   Artificial Ig mu-chain mRNA
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; IG-Heavy-Mu; cDNA; rearranged; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-36
+RA   ;
+RT   ;
+RL   Patent number WO8403712-A/41, 27-SEP-1984.
+XX
+DR   ENA; A04229.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..36
+FT                   /organism="synthetic construct"
+XX
+SQ   Sequence 36 BP; 12 A; 8 C; 9 G; 7 T; 0 other;
+     aaggtattgc acatatgcaa gtgcaactgc agcagc                                  36
+//
+ID   A04230; SV 1; linear; cDNA; STD; SYN; 36 BP.
+XX
+AC   A04230;
+XX
+DT   11-MAR-1998 (Rel. 199811-3, arrived in LIGM-DB)
+DT   20-APR-1999 (Rel. 199916-2, Last updated, Version 2)
+XX
+DE   Artificial Ig mu-chain mRNA
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; IG-Heavy-Mu; cDNA; rearranged; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-36
+RA   ;
+RT   ;
+RL   Patent number WO8403712-A/42, 27-SEP-1984.
+XX
+DR   ENA; A04230.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..36
+FT                   /organism="synthetic construct"
+XX
+SQ   Sequence 36 BP; 10 A; 8 C; 10 G; 8 T; 0 other;
+     aaggtattgc acatatgcag gttcagctgc agcagc                                  36
+//
+ID   A04231; SV 1; linear; cDNA; STD; SYN; 31 BP.
+XX
+AC   A04231;
+XX
+DT   11-MAR-1998 (Rel. 199811-3, arrived in LIGM-DB)
+DT   20-APR-1999 (Rel. 199916-2, Last updated, Version 2)
+XX
+DE   Artificial Ig mu-chain mRNA
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; IG-Heavy-Mu; cDNA; rearranged; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-31
+RA   ;
+RT   ;
+RL   Patent number WO8403712-A/43, 27-SEP-1984.
+XX
+DR   ENA; A04231.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..31
+FT                   /organism="synthetic construct"
+XX
+SQ   Sequence 31 BP; 11 A; 5 C; 9 G; 6 T; 0 other;
+     aagggtatga tcaatgcaag tgcaactgca g                                       31
+//
+ID   A05232; SV 1; linear; unassigned DNA; PAT; SYN; 28 BP.
+XX
+AC   A05232;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   06-OCT-2012 (Rel. 201240-6, Last updated, Version 3)
+XX
+DE   Artificial sequence fig 2 from page 1/6
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   scFv; patent; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-28
+RA   Loewenadler B., Holmgren E., Uhlen M., Nilsson B.;
+RT   "Preparation of fused proteins, antibodies and processes therefore.";
+RL   Patent number EP0243333-A/9, 28-OCT-1987.
+RL   KabiGen AB.
+XX
+DR   ENA; A05232.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..28
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+XX
+SQ   Sequence 28 BP; 5 A; 9 C; 9 G; 5 T; 0 other;
+     gaattcccgg ggatccgtcg acctgcag                                           28
+//
+ID   A05422; SV 1; linear; unassigned DNA; PAT; SYN; 817 BP.
+XX
+AC   A05422;
+XX
+DT   12-JUN-2003 (Rel. 200324-4, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Synthetic M13-VHPCR1 sequence of Ig variable region
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Heavy; variable; diversity; joining; patent; regular; unassigned DNA;
+KW   rearranged; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-817
+RA   ;
+RT   ;
+RL   Patent number WO9005144-A/46, 17-MAY-1990.
+XX
+DR   ENA; A05422.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..817
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   CDS             join(122..166,249..>620)
+FT                   /transl_table=11
+FT                   /note="M13-VHPCR1 sequence"
+FT                   /protein_id="CAA00454.1"
+FT                   /translation="MGWSCIILFLVATATGVHSQVQLQESGPGLVRPSQTLSLTCTVSG
+FT                   STFSSYWMHWVRQPPGRGLEWIGRIDPNSGGTKYNEKFKSRVTMLVDTSKNQFSLRLSS
+FT                   VTAADTAVYYCARYDYYGSSYFDYWGQGTTVTVSS"
+FT   exon            122..166
+FT                   /number=1
+FT   exon            249..>620
+FT                   /number=2
+FT   intron          167..248
+FT                   /number=1
+XX
+SQ   Sequence 817 BP; 217 A; 194 C; 209 G; 197 T; 0 other;
+     aagcttatga atatgcaaat cctctgaatc tacatggtaa atataggttt gtctatacca        60
+     caaacagaaa aacatgagat cacagttctc tctacagtta ctgagcacac aggacctcac       120
+     catgggatgg agctgtatca tcctcttctt ggtagcaaca gctacaggta aggggctcac       180
+     agtagcaggc ttgaggtctg gacatatata tgggtgacaa tgacatccac tttgcctttc       240
+     tctccacagg tgtccactcc caggtccaac tgcaggagag cggtccaggt cttgtgagac       300
+     ctagccagac cctgagcctg acctgcaccg tgtctggcag caccttcagc agctactgga       360
+     tgcactgggt gagacagcca cctggacgag gtcttgagtg gattggaagg attgatccta       420
+     atagtggtgg tactaagtac aatgagaagt tcaagagcag agtgacaatg ctggtagaca       480
+     ccagcaagaa ccagttcagc ctgagactca gcagcgtgac agccgccgac accgcggtct       540
+     attattgtgc aagatacgat tactacggta gtagctactt tgactactgg ggccaaggga       600
+     ccacggtcac cgtctcctca ggtgagtcct tacaacctct ctcttctatt cagcttaaat       660
+     agattttact gcatttgttg ggggggaaat gtgtgtatct gaatttcagg tcatgaagga       720
+     ctagggacac cttgggagtc agaaagggtc attgggagcc cgggctgatg cagacagaca       780
+     tcctcagctc ccagacttca tggccagaga tttatag                                817
+//
+ID   A05424; SV 1; linear; unassigned DNA; PAT; SYN; 620 BP.
+XX
+AC   A05424;
+XX
+DT   12-JUN-2003 (Rel. 200324-4, arrived in LIGM-DB)
+DT   14-JAN-2013 (Rel. 201303-1, Last updated, Version 4)
+XX
+DE   Synthetic M13-VKPCR1 sequence of Ig variable region
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   IG-Light; IG-Light-Kappa-IGK; variable; joining; patent; regular;
+KW   unassigned DNA; rearranged; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-620
+RA   ;
+RT   ;
+RL   Patent number WO9005144-A/48, 17-MAY-1990.
+XX
+DR   ENA; A05424.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..620
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+FT   CDS             join(122..166,249..>584)
+FT                   /transl_table=11
+FT                   /note="M13-VKPCR1"
+FT                   /protein_id="CAA00455.1"
+FT                   /translation="MGWSCIILFLVATATGVHSDIQLTQSPSSLSASVGDRVTITCRAS
+FT                   GNIHNYLAWYQQKPGKAPKLLIYYTTTLADGVPSRFSGSGSGTDFTFTISSLQPEDIAT
+FT                   YYCQHFWSTPRTFGQGTKVVIKR"
+FT   exon            122..166
+FT                   /number=1
+FT   exon            249..>584
+FT                   /number=2
+FT   intron          167..248
+FT                   /number=1
+XX
+SQ   Sequence 620 BP; 168 A; 175 C; 144 G; 133 T; 0 other;
+     aagcttatga atatgcaaat cctctgaatc tacatggtaa atataggttt gtctatacca        60
+     caaacagaaa aacatgagat cacagttctc tctacagtta ctgagcacac aggacctcac       120
+     catgggatgg agctgtatca tcctcttctt ggtagcaaca gctacaggta aggggctcac       180
+     agtagcaggc ttgaggtctg gacatatata tgggtgacaa tgacatccac tttgcctttc       240
+     tctccacagg tgtccactcc gacatccagc tgacccagag cccaagcagc ctgagcgcca       300
+     gcgtgggtga cagagtgacc atcacctgta gagccagcgg taacatccac aactacctgg       360
+     cttggtacca gcagaagcca ggtaaggctc caaagctgct gatctactac accaccaccc       420
+     tggctgacgg tgtgccaagc agattcagcg gtagcggtag cggtaccgac ttcaccttca       480
+     ccatcagcag cctccagcca gaggacatcg ccacctacta ctgccagcac ttctggagca       540
+     ccccaaggac gttcggccaa gggaccaagg tggtgatcaa acgtgagtag aatttaaact       600
+     ttgcttcctc agttggatcc                                                   620
+//
+ID   A06333; SV 1; linear; unassigned DNA; PAT; SYN; 39 BP.
+XX
+AC   A06333;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   06-OCT-2012 (Rel. 201240-6, Last updated, Version 3)
+XX
+DE   Artificial pEX8-mer sequence
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   scFv; patent; unassigned DNA; synthetic construct.
+XX
+OS   Synthetic construct (synthetic construct)
+OC   other sequences; artificial sequences; Synthetic construct.
+XX
+RN   [1]
+RP   1-39
+RA   Oltersdorf T., Roewekamp W., Schneider-Gaedicke A., Seedorf K., Duerst M.,
+RA   Schwarz E.;
+RT   "Expression products of human papilloma virus type 18, antibodies specific
+RT   for these proteins, and diagnostic reagents containing these antibodies or
+RT   the corresponding DNA.";
+RL   Patent number EP0256321-A/10, 24-FEB-1988.
+RL   BEHRINGWERKE Aktiengesellschaft.
+XX
+DR   ENA; A06333.
+XX
+CC   IMGT/LIGM-DB annotation level: keyword level
+XX
+FH   Key             Location/Qualifiers (from EMBL)
+FH   
+FT   source          1..39
+FT                   /organism="synthetic construct"
+FT                   /mol_type="unassigned DNA"
+FT                   /db_xref="taxon:32630"
+XX
+SQ   Sequence 39 BP; 7 A; 12 C; 12 G; 8 T; 0 other;
+     ctgaattccg gggatccgtc gacctgcagc caagcttgg                               39
+//
+ID   A06335; SV 1; linear; unassigned DNA; PAT; SYN; 39 BP.
+XX
+AC   A06335;
+XX
+DT   24-MAY-2002 (Rel. 200221-5, arrived in LIGM-DB)
+DT   06-OCT-2012 (Rel. 201240-6, Last updated, Version 3)
+XX
+DE   Artificial pEX10-mer sequence
+XX
+KW   antigen receptor; Immunoglobulin superfamily (IgSF); immunoglobulin (IG);
+KW   scFv; patent; unassigned DNA; synthetic construct.
