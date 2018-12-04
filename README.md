@@ -50,6 +50,12 @@ After running the pipeline:
 yarn start
 ```
 
+To visualize the steps of the pipeline:
+
+```
+yarn dag
+```
+
 ## Deployment
 
 ### Sync JSON files for viewing on dashboard
@@ -62,6 +68,6 @@ rsync -arvm --include "*/V*.json" --include="*/" --exclude="*" data/ $USER@$HOST
 ### Webserver
 
 ```
-webpack
+yarn build
 npx http-server -p $PORT dist
 ```

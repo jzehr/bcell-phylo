@@ -1,5 +1,4 @@
 import os
-import itertools as it
 import re
 import collections
 import json
@@ -8,34 +7,43 @@ import itertools as it
 import numpy as np
 from Bio import SeqIO
 from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+from Bio import AlignIO
+from Bio.Align import AlignInfo
+from joblib import Memory
 
 
-## had to manually get rid of "V", "V1", "V2", etc ##
-def get_unique_vs(input, patients, clones, all_vs):
-    #giant_vs = []
-    ## have and and clause that says if the re.split is not in this list ##
-    bad_eggs = ['V', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7']
+JOBLIB_CACHE = os.path.join('data', 'joblib')
+MEMORY = Memory(JOBLIB_CACHE, verbose=0)
+
+
+def get_vgene_id(entry):
+    return re.split(',|\*|\|', entry['tag'])[0]
+
+
+def is_valid_entry(entry):
+    is_right_size = entry['size'] > 30
+    is_not_full_v = len(get_vgene_id(entry)) > 2
+    not_or = not 'OR' in entry['tag']
+    return is_right_size and is_not_full_v and not_or
+
+
+@MEMORY.cache
+def get_patient_vgene_pairs(patients, clones, write=False):
+    vs = []
+    patient_v_pairs = []
     for patient_id in patients:
-        vs = []
+        current_patient_vs = []
         for clone in clones:
             json_filename = 'data/input/%s_%s_clone.json' % (patient_id, clone) 
             with open(json_filename) as json_file:
                 data = json.load(json_file)
-                all_entries = it.chain.from_iterable(data)
-                vs += [re.split(',|\*|\|', entry['tag'])[0] for entry in all_entries if entry['size'] > 30]
-                #giant_vs += [re.split(',|\*|\|', entry['tag'])[0] for entry in all_entries]
-
-        unique_vs = list(set(vs))
-        unique_vs.sort()
-
-        os.makedirs('data/%s/' %  patient_id, exist_ok=True)
-        with open('data/%s/unique_vs.json' %  patient_id, 'wt') as output_file:
-            json.dump(unique_vs, output_file)
-
-    # unique_giant = list(set(giant_vs))
-    # unique_giant.sort()
-    # with open('data/unique_vs.json', 'wt') as output_file:
-    #     json.dump(unique_vs, output_file)
+            all_entries = it.chain.from_iterable(data)
+            current_vs = [get_vgene_id(entry) for entry in all_entries if is_valid_entry(entry)]
+            current_patient_vs += current_vs
+        unique_patient_vs = [v for v in sorted(list(set(current_patient_vs))) if v != 'V' and not 'OR' in v]
+        patient_v_pairs += [{'patient_id': patient_id, 'v_gene': v} for v in unique_patient_vs]
+    return patient_v_pairs
 
 
 def clone_json_to_unaligned_fasta(input, output, clone):
@@ -80,7 +88,6 @@ def separate_into_regions(input, output, v_gene):
 
 
 def collapse_identical_sequences(input_fasta, output_fasta):
-    ### return true of false, then exit the snakemake ### 
     records = list(SeqIO.parse(input_fasta, 'fasta'))
     collapsed_records = []
     enumerated_records = list(enumerate(records))
@@ -95,7 +102,7 @@ def collapse_identical_sequences(input_fasta, output_fasta):
                     id_j = record_j.name.split('_')[0][3:]
                     size_i = int(record_i.name.split('_')[2].split('-')[1])
                     size_j = int(record_j.name.split('_')[2].split('-')[1])
-                    new_id = id_i+id_j
+                    new_id = id_j + 'COLLAPSED'
                     new_size = size_i+size_j
                     header_portion = '_'.join(record_i.name.split('_')[3:])
                     header_parameters = (new_id, time_i, new_size, header_portion)
@@ -162,6 +169,18 @@ def protein_alignment_to_codon_alignment(protein_alignment, nucleotide_fasta, ou
           out.write('\n')
 
 
+def get_consensus_sequence(input_fasta, output_fasta):
+    alignment = AlignIO.read(input_fasta, 'fasta')
+    information = AlignInfo.SummaryInfo(alignment)
+    consensus_sequence = information.dumb_consensus()
+    consensus_record = SeqRecord(
+        consensus_sequence,
+        id='consensus',
+        description=''
+    )
+    SeqIO.write(consensus_record, output_fasta, 'fasta')
+
+
 def gap_trimmer(input, output):
     codon_file = list(SeqIO.parse(input, 'fasta'))
     id_codon = []
@@ -181,40 +200,87 @@ def gap_trimmer(input, output):
             file.write("{}{}\n{}\n".format( '>', line[0], line[1]))
 
 
-def indicial_mapper(in_fasta, in_json, out_json):
-    profile = list(SeqIO.parse(in_fasta, 'fasta'))
+def get_protein_indices(exon_start, region_start, region_end, index_map):
+    protein_start = int(region_start - exon_start) // 3
+    region_width = int(region_end - region_start) // 3
+    protein_end = protein_start + region_width
+    return (
+        int(index_map[protein_start]) + 1,
+        int(index_map[protein_end - 1]) + 1
+    )
+
+
+def indicial_mapper(input_fasta, input_json, output_json, v_gene):
+    profile = list(SeqIO.parse(input_fasta, 'fasta'))
     germline = None
     for seq_record in profile:
-        print(seq_record)
-        if 'Germline_V' in seq_record.description:
-            print('found it')
-          #if 'Human' in seq_record.description:
-            germline = seq_record
-            #print(seq_record)
+          if 'Germline' in seq_record.description:
+              germline = seq_record
 
-    germline_np = np.array(list(str(germline.seq)), dtype='<U1')
-    is_gap = germline_np == '-'
-    profile_indices = np.arange(len(is_gap))
-    index_map = profile_indices[~is_gap]
+    if germline:
+        germline_np = np.array(list(str(germline.seq)), dtype='<U1')
+        is_gap = germline_np == '-'
+        profile_indices = np.arange(len(is_gap))
+        index_map = profile_indices[~is_gap]
 
-    with open(in_json) as v_gene_json_file:
-        imgt_vgene_data = json.load(v_gene_json_file)
+        with open(input_json) as v_gene_json_file:
+            imgt_vgene_data = json.load(v_gene_json_file)
 
-    CDR3_profile_coords = (
-        int(index_map[imgt_vgene_data['cdr3_protein_start']])+1,
-        int(index_map[imgt_vgene_data['cdr3_protein_end']-1])+1
-    )
+        has_cdr3 = bool(imgt_vgene_data['CDR3-IMGT-START'])
+        has_fr3 = bool(imgt_vgene_data['FR3-IMGT-START'])
+        has_exon = bool(imgt_vgene_data['V-EXON-START'])
+        if has_cdr3 and has_exon:
+            CDR3_profile_coords = get_protein_indices(
+                imgt_vgene_data['V-EXON-START'],
+                imgt_vgene_data['CDR3-IMGT-START'],
+                imgt_vgene_data['CDR3-IMGT-END'],
+                index_map
+            )
+        else:
+            CDR3_profile_coords = None
 
-    FR3_profile_coords = (
-        int(index_map[imgt_vgene_data['fr3_protein_start']])+1,
-        int(index_map[imgt_vgene_data['fr3_protein_end']-1])+1
-    )
+        if has_fr3 and has_exon:
+            FR3_profile_coords = get_protein_indices(
+                imgt_vgene_data['V-EXON-START'],
+                imgt_vgene_data['FR3-IMGT-START'],
+                imgt_vgene_data['FR3-IMGT-END'],
+                index_map
+            )
+        else:
+            FR3_profile_coords = None
 
-    output_dict = {
-        'CDR3': CDR3_profile_coords,
-        'FR3': FR3_profile_coords
-    }
+        output_dict = {
+            'CDR3': CDR3_profile_coords,
+            'FR3': FR3_profile_coords
+        }
 
-    with open(out_json, 'w') as output_json_file:
-        json.dump(output_dict, output_json_file)
+        with open(output_json, 'w') as output_json_file:
+            json.dump(output_dict, output_json_file)
+    else:
+        with open(output_json, 'w') as output_json_file:
+            empty_json = { 'CDR3': None, 'FR3': None }
+            json.dump(empty_json, output_json_file)
+
+
+def cleanup(patient_ids):
+    nested_pvps = {}
+    is_vgene_directory = lambda directory: directory[-6:] != '.fasta'
+    for patient_id in patient_ids:
+        vgene_allele = {}
+        patient_directory = 'data/%s' % patient_id
+        directory_contents = os.listdir(patient_directory)
+        vgene_candidates = [content for content in directory_contents if is_vgene_directory(content)]
+        for vgene_candidate in vgene_candidates:
+            dashboard_path = 'data/%s/%s/dashboard.json' % (patient_id, vgene_candidate)
+            if os.path.isfile(dashboard_path):
+                key = vgene_candidate[1] 
+                index = vgene_candidate.index('-')
+                fragment = vgene_candidate[index+1:]
+                if key in vgene_allele:
+                    vgene_allele[key].append(fragment)
+                else:
+                    vgene_allele[key] = [fragment]
+        nested_pvps[patient_id] = vgene_allele
+    with open('data/patient_v_pairs.json', 'w') as output_file:
+        json.dump(nested_pvps, output_file, indent=2)
 

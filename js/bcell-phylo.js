@@ -121,22 +121,34 @@ class BCellPhylo extends Component {
   constructor(props) {
     super(props);
 
-    this.column_sizes = [700, 700, 200, 200, 700];
+    this.column_sizes = [700, 700, 200, 700, 200];
     this.row_sizes = [40, 20, 700];
   }
   componentWillUpdate(nextProps) {
     if (nextProps.json) {
       const { site_size } = nextProps;
+      var found_germline = false;
       this.sequence_data = fastaParser(nextProps.json.fasta)
         .map(record => {
           record.old_header = record.header;
-          if (record.header.indexOf('Germline_') > -1) return record;
+          if (record.header.indexOf('Germline_') > -1) {
+            found_germline = true;
+            return record;
+          }
           record.size = get_size(record, 'header');
           record.time = get_time(record, 'header');
           record.cdr3 = get_cdr3(record, 'header');
           record.header = get_signature(record, 'header');
           return record;
         });
+      if(!found_germline) {
+        const number_of_sites = this.sequence_data[0].seq.length;
+        this.sequence_data.unshift({
+          header: 'Germline_missing',
+          old_header: 'Germline_missing',
+          seq: new Array(number_of_sites+1).join('-')
+        });
+      }
       const number_of_sequences = this.sequence_data.length-1;
       this.tree_size = number_of_sequences * site_size;
       this.main_tree = d3.layout
@@ -177,7 +189,6 @@ class BCellPhylo extends Component {
         .get_nodes(true)
         .filter(d3.layout.phylotree.is_leafnode)
         .map(d => d.name.split('_')[0]);
-
       this.sequence_data.sort((a, b) => {
         if(a.old_header.indexOf('Germline_') > -1) return -1;
         if(b.old_header.indexOf('Germline_') > -1) return 1;
@@ -188,6 +199,7 @@ class BCellPhylo extends Component {
           b_index = ordered_leaf_names.indexOf(b_header);
         return a_index - b_index;
       });
+
     }
   }
   componentDidUpdate() {
@@ -220,7 +232,7 @@ class BCellPhylo extends Component {
       this.guide_tree(this.parsed).layout();
 
       
-      const alignment_axis_width = this.column_sizes[4],
+      const alignment_axis_width = this.column_sizes[3],
         alignment_axis_height  = this.row_sizes[0],
         bar_axis_height = this.row_sizes[1];
 
@@ -238,49 +250,51 @@ class BCellPhylo extends Component {
         .domain([1, number_of_sites])
         .range([site_size / 2, alignment_width - site_size / 2]);
 
-      const { CDR3, FR3 } = this.props.json,
-        fr3_start = alignment_axis_scale(FR3[0]-.5),
-        fr3_end = alignment_axis_scale(FR3[1]+.5),
-        fr3_width = fr3_end-fr3_start,
-        fr3_midpoint = (fr3_start+fr3_end)/2;
-      d3.select('#alignmentjs-axis')
-        .append('rect')
-        .attr('x', fr3_start)
-        .attr('y', alignment_axis_height/2)
-        .attr('width', fr3_width)
-        .attr('height',  alignment_axis_height/2)
-        .attr('fill', 'blue')
-        .attr('opacity', .5);
-      d3.select('#alignmentjs-axis')
-        .append('text')
-        .attr('x', fr3_midpoint)
-        .attr('y', alignment_axis_height/4)
-        .attr('alignment-baseline', 'middle')
-        .attr('text-anchor', 'middle')
-        .attr('stroke', 'blue')
-        .text('FR3');
-
-      const cdr3_start = alignment_axis_scale(CDR3[0]-.5),
-        cdr3_end = alignment_axis_scale(CDR3[1]+.5),
-        cdr3_width = cdr3_end-cdr3_start,
-        cdr3_midpoint = (cdr3_start+cdr3_end)/2;
-      d3.select('#alignmentjs-axis')
-        .append('rect')
-        .attr('x', cdr3_start)
-        .attr('y', alignment_axis_height/2)
-        .attr('width', cdr3_width)
-        .attr('height',  alignment_axis_height/2)
-        .attr('fill', 'red')
-        .attr('opacity', .5);
-      d3.select('#alignmentjs-axis')
-        .append('text')
-        .attr('x', cdr3_midpoint)
-        .attr('y', alignment_axis_height/4)
-        .attr('alignment-baseline', 'middle')
-        .attr('text-anchor', 'middle')
-        .attr('stroke', 'red')
-        .text('CDR3');
-
+      const { CDR3, FR3 } = this.props.json;
+      if(FR3) {
+        const fr3_start = alignment_axis_scale(FR3[0]-.5),
+          fr3_end = alignment_axis_scale(FR3[1]+.5),
+          fr3_width = fr3_end-fr3_start,
+          fr3_midpoint = (fr3_start+fr3_end)/2;
+        d3.select('#alignmentjs-axis')
+          .append('rect')
+          .attr('x', fr3_start)
+          .attr('y', alignment_axis_height/2)
+          .attr('width', fr3_width)
+          .attr('height',  alignment_axis_height/2)
+          .attr('fill', 'blue')
+          .attr('opacity', .5);
+        d3.select('#alignmentjs-axis')
+          .append('text')
+          .attr('x', fr3_midpoint)
+          .attr('y', alignment_axis_height/4)
+          .attr('alignment-baseline', 'middle')
+          .attr('text-anchor', 'middle')
+          .attr('fill', 'blue')
+          .text('FR3');
+      }
+      if(CDR3) {
+        const cdr3_start = alignment_axis_scale(CDR3[0]-.5),
+          cdr3_end = alignment_axis_scale(CDR3[1]+.5),
+          cdr3_width = cdr3_end-cdr3_start,
+          cdr3_midpoint = (cdr3_start+cdr3_end)/2;
+        d3.select('#alignmentjs-axis')
+          .append('rect')
+          .attr('x', cdr3_start)
+          .attr('y', alignment_axis_height/2)
+          .attr('width', cdr3_width)
+          .attr('height',  alignment_axis_height/2)
+          .attr('fill', 'red')
+          .attr('opacity', .5);
+        d3.select('#alignmentjs-axis')
+          .append('text')
+          .attr('x', cdr3_midpoint)
+          .attr('y', alignment_axis_height/4)
+          .attr('alignment-baseline', 'middle')
+          .attr('text-anchor', 'middle')
+          .attr('fill', 'red')
+          .text('CDR3');
+      }
       var alignment_axis_svg = d3.select("#alignmentjs-alignment-axis");
       alignment_axis_svg.html("");
       alignment_axis_svg.attr("width", alignment_width)
@@ -297,7 +311,7 @@ class BCellPhylo extends Component {
         .attr("transform", `translate(0, ${alignment_axis_height - 1})`)
         .call(alignment_axis);
 
-      const bar_width = this.column_sizes[3],
+      const bar_width = this.column_sizes[4],
         bar_height = this.row_sizes[1];
 
       var bar_axis_svg = d3.select("#alignmentjs-bar-axis");
@@ -306,7 +320,7 @@ class BCellPhylo extends Component {
 
       var bar_scale = d3.scale.linear()
         .domain([0, max_size])
-        .range([10, bar_width-10]);
+        .range([0, bar_width-10]);
 
       var bar_axis = d3.svg.axis()
         .orient("top")
@@ -317,23 +331,24 @@ class BCellPhylo extends Component {
         .attr("class", "axis")
         .attr("transform", `translate(0, ${bar_axis_height - 1})`)
         .call(bar_axis);
+      d3.select('.axis .tick:first-child').remove()
 
       var bar_svg = d3.select("#alignmentjs-bar");
-      bar_svg.attr("width", this.column_sizes[3])
+      bar_svg.attr("width", this.column_sizes[4])
         .attr("height", alignment_height);
 
       bar_svg.selectAll('rect')
         .data(sequence_data.slice(1))
         .enter()
           .append('rect')
-          .attr('x', 10)
+          .attr('x', 0)
           .attr('y', function(d,i) { return i*site_size; })
           .attr('width', function(d) { return bar_scale(d.size); })
           .attr('height', site_size)
           .attr('fill', function(d) { return colors[d.time]; });
         
       const alignment_viewport_height = this.row_sizes[2],
-        alignment_viewport_width = this.column_sizes[4],
+        alignment_viewport_width = this.column_sizes[3],
         full_pixel_width = site_size * number_of_sites,
         full_pixel_height = site_size * (number_of_sequences-1);
       const scroll_broadcaster = new ScrollBroadcaster(
@@ -484,8 +499,8 @@ class BCellPhylo extends Component {
     ],
     { CDR3, FR3 } = this.props.json,
     highlight_roi_color = (character, position, header) => {
-      const in_cdr3_region = position >= CDR3[0] && position <= CDR3[1],
-        in_fr3_region = position >= FR3[0] && position <= FR3[1],
+      const in_cdr3_region = CDR3 && position >= CDR3[0] && position <= CDR3[1],
+        in_fr3_region = FR3 && position >= FR3[0] && position <= FR3[1],
         in_region_of_interest = in_cdr3_region || in_fr3_region;
       if(in_region_of_interest) {
         return character.toUpperCase() != "X" ? "black" : "white";
@@ -493,8 +508,8 @@ class BCellPhylo extends Component {
       return protein_colors[character];
     },
     highlight_roi_text_color = (character, position, header) => {
-      const in_cdr3_region = position >= CDR3[0] && position <= CDR3[1],
-        in_fr3_region = position >= FR3[0] && position <= FR3[1],
+      const in_cdr3_region = CDR3 && position >= CDR3[0] && position <= CDR3[1],
+        in_fr3_region = FR3 && position >= FR3[0] && position <= FR3[1],
         in_region_of_interest = in_cdr3_region || in_fr3_region;
       if(in_region_of_interest) {
         return protein_colors[character];
@@ -502,6 +517,10 @@ class BCellPhylo extends Component {
       return character.toUpperCase() != "X" ? "black" : "white";
     };
     this.sequence_data.number_of_sites = this.sequence_data[0].seq.length;
+    const number_of_sequences = this.sequence_data.length-1;
+    const tree_style = number_of_sequences > 35 ?
+      { overflowX: "scroll", overflowY: "scroll" } :
+      { display: "flex", justifyContent: "flex-end" };
     return (<Row>
       <Col xs={12}>
         <div id='viz' style={{display: "flex"}}>
@@ -534,24 +553,25 @@ class BCellPhylo extends Component {
 
             <div />
 
-            <div style={{display: "flex", justifyContent: "center", alignItems: "flex-end"}}>
-              <p>Family size</p>
-            </div>
-
             <SiteAxis
-              width={this.column_sizes[4]}
+              width={this.column_sizes[3]}
               height={this.row_sizes[0]}
               sequence_data={this.sequence_data}
             />
 
-            <div />
-
-            <div id="alignmentjs-bar-axis-div">
-              <svg id="alignmentjs-bar-axis" />
+            <div style={{display: "flex", justifyContent: "center", alignItems: "flex-end"}}>
+              <p>Family size</p>
             </div>
 
+            <SequenceAxis
+              width={this.column_sizes[2]}
+              height={this.row_sizes[2]}
+              sequence_data={[this.sequence_data[0]]}
+              id="dontScrollMe"
+            />
+
             <BaseAlignment
-              width={this.column_sizes[4]}
+              width={this.column_sizes[3]}
               height={this.row_sizes[1]}
               sequence_data={[this.sequence_data[0]]}
               disableVerticalScrolling
@@ -560,9 +580,13 @@ class BCellPhylo extends Component {
               id='germline'
             />
 
+            <div id="alignmentjs-bar-axis-div">
+              <svg id="alignmentjs-bar-axis" />
+            </div>
+
             <div
               id="alignmentjs-largeTreeAlignment-div"
-              style={{ overflowX: "scroll", overflowY: "scroll" }}
+              style={tree_style}
             >
               <svg id="alignmentjs-largeTreeAlignment" />
             </div>
@@ -573,17 +597,17 @@ class BCellPhylo extends Component {
               sequence_data={this.sequence_data.slice(1)}
             />
 
-            <div id="alignmentjs-bar-div" style={{overflowY: "scroll"}}>
-              <svg id="alignmentjs-bar" />
-            </div>
-
             <BaseAlignment
-              width={this.column_sizes[4]}
+              width={this.column_sizes[3]}
               height={this.row_sizes[2]}
               sequence_data={this.sequence_data.slice(1)}
               site_color={highlight_roi_color}
               text_color={highlight_roi_text_color}
             />
+
+            <div id="alignmentjs-bar-div" style={{overflowY: "scroll"}}>
+              <svg id="alignmentjs-bar" />
+            </div>
 
           </div>
         </div>

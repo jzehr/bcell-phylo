@@ -31,14 +31,17 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "file-loader": "^1.1.6",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "style-loader": "^0.19.1",
-    "webpack": "^3.10.0",
+    "webpack": "4",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --open --host 0.0.0.0"
+    "start": "./node_modules/.bin/webpack-dev-server --mode development --open --host 0.0.0.0",
+    "dag": "snakemake --dag data/77612/V3-11/dashboard.json | dot -Tsvg > bcell-pipeline.svg && open bcell-pipeline.svg && rm bcell-pipeline.svg",
+    "unpack": "tar xvzf data/bcell-phylo_Ver4.tar.gz -C data/input",
+    "build": "webpack --devtool none"
   }
 }

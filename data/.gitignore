@@ -1,5 +1,7 @@
 imgt
+blast
 *.tar.gz
 *.fasta
 *.json
 *.new
+joblib
