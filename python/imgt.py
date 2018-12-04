@@ -91,6 +91,9 @@ def process_blast_result(blast_result, nuc_fasta, aa_fasta, json_information):
     write_empty_file = False
     if len(hits) > 0:
         top_id = hits[0]["description"][0]["id"]
+        # a hack!
+        if 'gb' in top_id or 'emb' in top_id:
+            top_id = top_id.split('|')[1]
         imgt_json_path = 'data/imgt/%s.json' % top_id
         with open(imgt_json_path) as imgt_json_file:
             imgt_json = json.load(imgt_json_file)
