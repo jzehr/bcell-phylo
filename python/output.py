@@ -18,5 +18,5 @@ def json_for_dashboard(input_fasta, input_json, tree, output, wildcards):
     }
 
     with open(output, 'w') as file:
-        json.dump(output_dict, file)
+        json.dump(output_dict, file, indent=4)
 
