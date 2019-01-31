@@ -6,9 +6,11 @@ CLONES = ["1", "2", "3", "4", "5", "6"]
 PATIENT_V_PAIRS = get_patient_vgene_pairs(PATIENT_IDS, CLONES)
 
 dashboard_filename = lambda pair: "data/%s/%s/dashboard.json" % (pair['patient_id'], pair['v_gene'])
+cluster_filename = lambda pair: "data/%s/%s/cluster.json" % (pair['patient_id'], pair['v_gene'])
 rule all:
   input:
-    [dashboard_filename(pair) for pair in PATIENT_V_PAIRS]
+    [dashboard_filename(pair) for pair in PATIENT_V_PAIRS],
+    [cluster_filename(pair) for pair in PATIENT_V_PAIRS]
   run:
     cleanup(PATIENT_IDS)
 
@@ -167,4 +169,12 @@ rule v_gene_json:
     json="data/{patient_id}/V{v_gene}/dashboard.json"
   run:
     json_for_dashboard(input.fasta, input.json, input.tree, output.json, wildcards)
+
+rule cluster_data:
+  input:
+    newick=rules.trees.output.tree
+  output:
+    json="data/{patient_id}/V{v_gene}/cluster.json"
+  run:
+    cluster_data(input.newick, output.json)
 

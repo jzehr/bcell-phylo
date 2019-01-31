@@ -3,6 +3,7 @@ import re
 import collections
 import json
 import itertools as it
+from csv import DictWriter
 
 import numpy as np
 from Bio import SeqIO
@@ -10,6 +11,7 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import AlignIO
 from Bio.Align import AlignInfo
+from ete3 import Tree
 from joblib import Memory
 
 
@@ -265,12 +267,14 @@ def indicial_mapper(input_fasta, input_json, output_json, v_gene):
 def cleanup(patient_ids):
     nested_pvps = {}
     is_vgene_directory = lambda directory: directory[-6:] != '.fasta'
+    cluster_info = []
     for patient_id in patient_ids:
         vgene_allele = {}
         patient_directory = 'data/%s' % patient_id
         directory_contents = os.listdir(patient_directory)
         vgene_candidates = [content for content in directory_contents if is_vgene_directory(content)]
         for vgene_candidate in vgene_candidates:
+            cluster_path = 'data/%s/%s/cluster.json' % (patient_id, vgene_candidate)
             dashboard_path = 'data/%s/%s/dashboard.json' % (patient_id, vgene_candidate)
             if os.path.isfile(dashboard_path):
                 key = vgene_candidate[1] 
@@ -280,7 +284,48 @@ def cleanup(patient_ids):
                     vgene_allele[key].append(fragment)
                 else:
                     vgene_allele[key] = [fragment]
+                with open(cluster_path) as cluster_file:
+                    cluster_data = json.load(cluster_file)
+                    cluster_info.append({
+                        'patient_id': patient_id,
+                        'vgene_allele': vgene_candidate,
+                        'visit1': cluster_data['1'],
+                        'visit2': cluster_data['2'],
+                        'visit3': cluster_data['3']
+                    })
         nested_pvps[patient_id] = vgene_allele
     with open('data/patient_v_pairs.json', 'w') as output_file:
         json.dump(nested_pvps, output_file, indent=2)
+    with open('data/cluster_information.csv', 'w', newline='') as csv_file:
+        fieldnames = ['patient_id', 'vgene_allele', 'visit1', 'visit2', 'visit3']
+        writer = DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in cluster_info:
+            writer.writerow(row)
+
+
+def cluster_data(input_newick, output_json):
+    threshold = .9
+    tree = Tree(input_newick)
+    largest_above_threshold = { '1': 0, '2': 0, '3': 0 }
+    for node in tree.traverse('postorder'):
+        node.counts = { '1': 0, '2': 0, '3': 0 }
+        visit_correction = { '1': '1', '2': '1', '3': '2', '4': '2', '5': '3', '6': '3'}
+        if node.is_leaf():
+            visit = visit_correction[node.name.split('_')[1].split('-')[1]]
+            size = int(node.name.split('_')[2].split('-')[1])
+            node.counts[visit] = size
+        else:
+            for child in node.children:
+                node.counts['1'] += child.counts['1']
+                node.counts['2'] += child.counts['2']
+                node.counts['3'] += child.counts['3']
+            total_counts = node.counts['1'] + node.counts['2'] + node.counts['3']
+            for visit in ['1', '2', '3']:
+               above_threshold = node.counts[visit] / total_counts > threshold 
+               is_largest = node.counts[visit] > largest_above_threshold[visit]
+               if above_threshold and is_largest:
+                   largest_above_threshold[visit] = node.counts[visit]
+    with open(output_json, 'w') as json_file:
+        json.dump(largest_above_threshold, json_file)
 
